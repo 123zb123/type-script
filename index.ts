@@ -170,6 +170,12 @@ function squerRectangle(squer : Rectangle): number {
 }
 
 //3
+function isPalindrome(word: string): boolean {
+    const reversedWord = word.split('').reverse().join('');
+    return word === reversedWord;
+}
+console.log(isPalindrome('abe'))
+
 
 
 
