@@ -1,3 +1,4 @@
+"use strict";
 //1
 function bigNumReturn(num1, num2) {
     if (num1 > num2) {
@@ -25,30 +26,30 @@ function stringLenght(senten) {
 }
 //5
 function numArray(num) {
-    var arr = [];
-    for (var i = 0; i < num; i++) {
+    let arr = [];
+    for (let i = 0; i < num; i++) {
         arr.push(i);
     }
     return arr;
 }
 //6
 function higeFromArr(arr) {
-    var num = arr[0];
-    for (var i = 0; i < num; i++) {
+    let num = arr[0];
+    for (let i = 0; i < num; i++) {
         if (arr[i] > num) {
             num = arr[i];
         }
     }
     return num;
 }
-var person = {
+const person = {
     name: 'john',
     age: 20,
     isStudent: true
 };
 //8
 function printPerson(person) {
-    return "".concat(person.name, " ").concat(person.age, " ").concat(person.isStudent);
+    return `${person.name} ${person.age} ${person.isStudent}`;
 }
 //9
 function isMinor(person) {
@@ -57,18 +58,18 @@ function isMinor(person) {
     }
     return false;
 }
-var book = {
+const book = {
     title: "world",
     author: "david",
     year: 2000
 };
-var reader1 = {
+const reader1 = {
     name: 'Alice',
     age: 25,
     isStudent: false,
     favoriteBook: book
 };
-var reader2 = {
+const reader2 = {
     name: 'Bob',
     age: 30,
     isStudent: false,
@@ -78,7 +79,7 @@ var reader2 = {
         year: 1951
     }
 };
-var reader3 = {
+const reader3 = {
     name: 'Eve',
     age: 22,
     isStudent: true,
@@ -88,11 +89,11 @@ var reader3 = {
         year: 1960
     }
 };
-var readersArr = [reader1, reader2, reader3];
+const readersArr = [reader1, reader2, reader3];
 //12
 function returnOldestReader(arr) {
-    var oldMen = arr[0];
-    for (var i = 0; i < arr.length; i++) {
+    let oldMen = arr[0];
+    for (let i = 0; i < arr.length; i++) {
         if (arr[i].age > oldMen.age) {
             oldMen = arr[i];
         }
@@ -101,8 +102,8 @@ function returnOldestReader(arr) {
 }
 //13
 function returnOldestBook(arr) {
-    var oldMen = arr[0];
-    for (var i = 0; i < arr.length; i++) {
+    let oldMen = arr[0];
+    for (let i = 0; i < arr.length; i++) {
         if (arr[i].favoriteBook.year < oldMen.favoriteBook.year) {
             oldMen = arr[i];
         }
@@ -112,8 +113,8 @@ function returnOldestBook(arr) {
 //exercise B
 //1
 function returnSumNumbersEvens(arr) {
-    var sum = 0;
-    for (var i = 0; i < arr.length; i++) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
         if (arr[i] % 2 === 0) {
             sum += arr[i];
         }
@@ -125,54 +126,54 @@ function squerRectangle(squer) {
 }
 //3
 function isPalindrome(word) {
-    var reversedWord = word.split('').reverse().join('');
+    const reversedWord = word.split('').reverse().join('');
     return word === reversedWord;
 }
 //4
 function firstCharToUpper(arr) {
-    arr.forEach(function (word, index) {
+    arr.forEach((word, index) => {
         arr[index] = word.charAt(0).toUpperCase() + word.slice(1);
     });
     return arr;
 }
 //5
 function returnUniqeValues(arr) {
-    var uniqeArr = [];
-    arr.forEach(function (number) {
+    const uniqeArr = [];
+    arr.forEach((number) => {
         if (!uniqeArr.includes(number)) {
             uniqeArr.push(number);
         }
     });
     return uniqeArr;
 }
-var family = {
+const family = {
     firstName: "John",
     lastName: "Doe"
 };
 function objectFamily(names) {
-    var newName = {
+    const newName = {
         firstInitial: names.firstName[0],
         lastInitial: names.lastName[0]
     };
     return newName;
 }
 //7
-var arr = [
+let arr = [
     { name: "John", age: 25 },
     { name: "Jane", age: 30 },
     { name: "Bob", age: 40 },
 ];
 function avgAges(arr) {
-    var sum = 0;
-    arr.forEach(function (ageNum) {
+    let sum = 0;
+    arr.forEach((ageNum) => {
         sum += ageNum.age;
     });
     return sum / arr.length;
 }
 function minAndMaxNumbers(arr) {
-    var result = {
-        minNumber: Math.min.apply(Math, arr),
-        maxNumber: Math.max.apply(Math, arr)
+    let result = {
+        minNumber: Math.min(...arr),
+        maxNumber: Math.max(...arr)
     };
     return result;
 }
