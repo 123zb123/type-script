@@ -146,6 +146,19 @@ function returnOldestBook (arr : Reader[]) : number {
     return oldMen.favoriteBook.year
 }
 
+function returnSumNumbersEvens(arr: number[]): number {
+    let sum: number = 0;
+    for (let i: number = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            sum += arr[i];
+        }
+    }
+    return sum;
+}
+
+
+
+
 
 
 
