@@ -125,25 +125,25 @@ const reader3: Reader = {
 const  readersArr : Reader[] = [reader1, reader2, reader3];
 
 //12
-function returnOldestReader (arr : Reader[]) : number {
+function returnOldestReader (arr : Reader[]) : Reader {
     let oldMen : Reader = arr[0]
     for (let i : number = 0; i < arr.length; i ++){
         if (arr[i].age > oldMen.age) {
             oldMen = arr[i]
         }
     }
-    return oldMen.age
+    return oldMen
 }
 
 //13
-function returnOldestBook (arr : Reader[]) : number {
+function returnOldestBook (arr : Reader[]) : Reader {
     let oldMen : Reader = arr[0]
     for (let i : number = 0; i < arr.length; i ++){
         if (arr[i].favoriteBook.year < oldMen.favoriteBook.year) {
             oldMen = arr[i]
         }
     }
-    return oldMen.favoriteBook.year
+    return oldMen
 }
 
 //exercise B
@@ -187,7 +187,7 @@ function firstCharToUpper(arr: string[]): string[] {
 function returnUniqeValues(arr: number[]): number[] {
     const uniqeArr: number[] = []
     arr.forEach((number) => {
-        if (! uniqeArr.includes(number)){
+        if (!uniqeArr.includes(number)){
             uniqeArr.push(number)
         }
     })

@@ -97,7 +97,7 @@ function returnOldestReader(arr) {
             oldMen = arr[i];
         }
     }
-    return oldMen.age;
+    return oldMen;
 }
 //13
 function returnOldestBook(arr) {
@@ -107,8 +107,10 @@ function returnOldestBook(arr) {
             oldMen = arr[i];
         }
     }
-    return oldMen.favoriteBook.year;
+    return oldMen;
 }
+//exercise B
+//1
 function returnSumNumbersEvens(arr) {
     var sum = 0;
     for (var i = 0; i < arr.length; i++) {
@@ -118,3 +120,67 @@ function returnSumNumbersEvens(arr) {
     }
     return sum;
 }
+function squerRectangle(squer) {
+    return squer.high * squer.with;
+}
+//3
+function isPalindrome(word) {
+    var reversedWord = word.split('').reverse().join('');
+    return word === reversedWord;
+}
+//4
+function firstCharToUpper(arr) {
+    arr.forEach(function (word, index) {
+        arr[index] = word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    return arr;
+}
+//5
+function returnUniqeValues(arr) {
+    var uniqeArr = [];
+    arr.forEach(function (number) {
+        if (!uniqeArr.includes(number)) {
+            uniqeArr.push(number);
+        }
+    });
+    return uniqeArr;
+}
+var family = {
+    firstName: "John",
+    lastName: "Doe"
+};
+function objectFamily(names) {
+    var newName = {
+        firstInitial: names.firstName[0],
+        lastInitial: names.lastName[0]
+    };
+    return newName;
+}
+//7
+var arr = [
+    { name: "John", age: 25 },
+    { name: "Jane", age: 30 },
+    { name: "Bob", age: 40 },
+];
+function avgAges(arr) {
+    var sum = 0;
+    arr.forEach(function (ageNum) {
+        sum += ageNum.age;
+    });
+    return sum / arr.length;
+}
+function minAndMaxNumbers(arr) {
+    var result = {
+        minNumber: Math.min.apply(Math, arr),
+        maxNumber: Math.max.apply(Math, arr)
+    };
+    return result;
+}
+//9
+function reverseArray(arr) {
+    if (Array.isArray(arr)) {
+        return arr.reverse();
+    }
+    return arr;
+}
+console.log(reverseArray([42, 'hello', true, null, undefined, { key: 'value' }, [1, 2, 3], function () { }]));
