@@ -174,9 +174,94 @@ function isPalindrome(word: string): boolean {
     const reversedWord = word.split('').reverse().join('');
     return word === reversedWord;
 }
-console.log(isPalindrome('abe'))
+
+//4
+function firstCharToUpper(arr: string[]): string[] {
+    arr.forEach((word, index) => {
+        arr[index] = word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    return arr;
+}
+
+//5
+function returnUniqeValues(arr: number[]): number[] {
+    const uniqeArr: number[] = []
+    arr.forEach((number) => {
+        if (! uniqeArr.includes(number)){
+            uniqeArr.push(number)
+        }
+    })
+    return uniqeArr
+}
+
+//6
+type Family = {
+    firstName: string,
+    lastName: string
+}
 
 
+type FamilyInicial = {
+    firstInitial: string,
+    lastInitial: string
+}
+
+const family: Family = { 
+    firstName: "John", 
+    lastName: "Doe"
+ }
+
+function objectFamily(names: Family): FamilyInicial {
+    const newName: FamilyInicial = {
+        firstInitial:names.firstName[0],
+        lastInitial:names.lastName[0]
+    }
+    return newName
+}
+type Per = {
+    name: string,
+    age: number
+}
+
+//7
+let arr: Per[] = [
+    { name: "John", age: 25 },
+     { name: "Jane", age: 30 },
+     { name: "Bob", age: 40 },
+     ]
+
+function avgAges (arr:Per[]):number {
+    let sum: number = 0
+    arr.forEach((ageNum) => {
+        sum += ageNum.age
+    })
+    return sum / arr.length
+}
+
+//8
+type Numbers = {
+    minNumber: number,
+    maxNumber: number
+}
+
+function minAndMaxNumbers(arr: number[]): Numbers{
+    let result: Numbers = {
+        minNumber : Math.min(...arr),
+        maxNumber : Math.max(...arr)
+    }
+    return result
+}
+
+//9
+function reverseArray(arr: unknown): unknown {
+    if (Array.isArray(arr)) {
+        return arr.reverse();
+    }
+    return arr;
+}
+
+console.log(reverseArray([42, 'hello', true, null, undefined, { key: 'value' }, [1, 2, 3], function() { }]
+));
 
 
 
