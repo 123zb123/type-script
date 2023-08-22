@@ -146,6 +146,9 @@ function returnOldestBook (arr : Reader[]) : number {
     return oldMen.favoriteBook.year
 }
 
+//exercise B
+
+//1
 function returnSumNumbersEvens(arr: number[]): number {
     let sum: number = 0;
     for (let i: number = 0; i < arr.length; i++) {
@@ -156,6 +159,17 @@ function returnSumNumbersEvens(arr: number[]): number {
     return sum;
 }
 
+//2
+type Rectangle = {
+    with: number,
+    high: number
+}
+
+function squerRectangle(squer : Rectangle): number {
+    return squer.high * squer.with;
+}
+
+//3
 
 
 
