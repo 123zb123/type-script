@@ -5,12 +5,21 @@
 function towValues<T,F>(bool : T, str : F):[T,F]{
     return [bool, str]
 }
-console.log(towValues(true,'dfg'))
-
-
 
 // 2.
 // צור פונקציה גנרית שמקבלת אובייקט מכל סוג ומפתח ומחזירה את ערך המפתח באובייקט
+function objectAnyType<T,K extends keyof T>(obj : T, key : K): T[K]{
+    return obj[key]
+}
+
+interface OBJ {
+    1 : string,
+    2 : number,
+    3 : boolean
+}
+
+const obj: OBJ = {1 : 'zvi', 2 : 22, 3 : true}
+console.log(objectAnyType(obj,3));
 
 
 //מתקדם
